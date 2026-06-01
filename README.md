@@ -54,13 +54,17 @@ patch:
 
 
 # 新世纪五笔字根
-
 ![新世纪字根图.jpg](https://github.com/seangong/Rime-wubi06/blob/master/doc/%E6%96%B0%E4%B8%96%E7%BA%AA%E5%AD%97%E6%A0%B9%E5%9B%BE.jpg)
 
-# 新旧版本字根变动表
-
+# 新世纪版与86版字根变动表
 ![新世纪版与86版字根变动表.jpg](https://github.com/seangong/Rime-wubi06/blob/master/doc/%E6%96%B0%E4%B8%96%E7%BA%AA%E7%89%88%E4%B8%8E86%E7%89%88%E5%AD%97%E6%A0%B9%E5%8F%98%E5%8A%A8%E8%A1%A8.jpg)
 
-# 汉字笔顺规则表
+# 新世纪版五笔字型字根总表及助记词
+![新世纪版五笔字型字根总表及助记词.jpg](https://github.com/seangong/rime-wubi/blob/master/doc/%E6%96%B0%E4%B8%96%E7%BA%AA%E7%89%88%E4%BA%94%E7%AC%94%E5%AD%97%E5%9E%8B%E5%AD%97%E6%A0%B9%E6%80%BB%E8%A1%A8%E5%8F%8A%E5%8A%A9%E8%AE%B0%E8%AF%8D.jpg)
 
+# 汉字编码方法及流程.jpg
+![汉字编码方法及流程.jpg](https://github.com/seangong/rime-wubi/blob/master/doc/%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81%E6%96%B9%E6%B3%95%E5%8F%8A%E6%B5%81%E7%A8%8B.jpg)
+
+# 汉字笔顺规则表
 ![汉字笔顺规则表.jpg](https://github.com/seangong/Rime-wubi06/blob/master/doc/%E6%B1%89%E5%AD%97%E7%AC%94%E9%A1%BA%E8%A7%84%E5%88%99%E8%A1%A8.jpg)
+
