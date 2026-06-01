@@ -8,7 +8,7 @@ schema:
   author:
     - sean gong
   description: |
-    五笔86版+拼音混合输入
+    86版五笔+拼音混合输入
   dependencies:
     - pinyin_simp
 
@@ -48,10 +48,12 @@ engine:
 # 五笔主输入配置
 translator:
   dictionary: wubi86
-  enable_charset_filter: true
+  enable_charset_filter: false
   enable_sentence: false                # 五笔建议关闭连打成句，保持单字/词组精准度
-  enable_encoder: true
-  encode_commit_history: true
+  enable_encoder: false
+  encode_commit_history: false
+  enable_user_dict: true
+  enable_completion: true               # 补全提示
   max_phrase_length: 8
   disable_user_dict_for_patterns:
     - "^[a-y]{1,3}$"                    # 1-3码彻底锁死词频，不让拼音和用户词库乱调频

@@ -4,16 +4,17 @@
 > `squirrel.custom.yaml` 中带有多有种主题皮肤。
 
 默认支持输入法：
-- 86版五笔 + 拼音
-- 新世纪版五笔 + 拼音
+- 86版五笔 + 拼音 混输
+- 新世纪五笔 + 拼音 混输
+- 新世纪五笔
 - 袖珍简化字拼音
 
-macOS版鼠须管（可直接移植到 windows 等其它系统）：
+macOS 版鼠须管（可直接移植到 windows 等其它系统）：
 
 - 支持字库：新世纪五笔，86版本五笔，86版本简入繁出，袖珍简化字拼音。
 - 支持五笔和拼音混输，默认 2 码是五笔，不会触发拼音输入。防止五笔一级简码和二级简码被覆盖。
-- 拼音输入超过 3 码，会自动切换到拼音输入模式，不需要特殊键触发。
-- 使用 `（即 1 左侧那个键） 触发拼音反查五笔。
+- 拼音混输超过 3 码，会自动切换到拼音输入模式，不需要特殊键触发。
+- 使用 `（即 1 左侧那个键） 触发 **拼音反查五笔**。
 
 ![Xnip2026-05-29_17-11-26.jpg](https://github.com/seangong/Rime-wubi06/blob/master/doc/Xnip2026-05-29_17-11-26.jpg)
 
@@ -41,13 +42,15 @@ macOS版鼠须管（可直接移植到 windows 等其它系统）：
 
 patch:
   schema_list:
-    - schema: wubi06_pinyin   # 新世纪五笔+拼音
-    - schema: wubi86_pinyin   # 新世纪五笔+拼音
-    - schema: clover          # 四叶草拼音输入法，如果你用四叶草，否则删除本行
+    - schema: wubi06          # 新世纪五笔，支持拼音反查五笔
+    - schema: wubi06_pinyin   # 新世纪五笔+拼音，支持拼音反查五笔
+    - schema: wubi86_pinyin   # 新世纪五笔+拼音，支持拼音反查五笔
     - schema: pinyin_simp
 ```
 
 4、重启部署即可。
+
+> 词库取自（新世紀五筆通規詞庫版(CNMan)） https://github.com/CNMan/rime-data.git
 
 
 # 新世纪五笔字根

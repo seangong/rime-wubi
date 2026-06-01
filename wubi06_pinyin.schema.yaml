@@ -8,7 +8,7 @@ schema:
   author:
     - sean gong
   description: |
-    五笔新世纪版＋拼音混合输入
+    新世纪五笔＋拼音混合输入，按 ` 拼音反查五笔
   dependencies:
     - pinyin_simp
 
@@ -48,14 +48,17 @@ engine:
 # 五笔主输入配置
 translator:
   dictionary: wubi06
-  enable_charset_filter: true
-  enable_sentence: false                # 五笔建议关闭连打成句，保持单字/词组精准度
-  enable_encoder: true
-  encode_commit_history: true
+  enable_charset_filter: false
+  enable_sentence: false                  # 五笔建议关闭连打成句，保持单字/词组精准度
+  enable_encoder: false
+  encode_commit_history: false
+  sentence_over_completion: false
+  enable_user_dict: true
+  enable_completion: true                 # 补全提示
   max_phrase_length: 8
   disable_user_dict_for_patterns:
-    - "^[a-y]{1,3}$"                    # 1-3码彻底锁死词频，不让拼音和用户词库乱调频
-  initial_quality: 10                   # 将五笔的权重设为最高
+    - "^[a-y]{1,3}$"                      # 1-3码彻底锁死词频，不让拼音和用户词库乱调频
+  initial_quality: 10                     # 将五笔的权重设为最高
   comment_format:
     - "xform/^/ /"
 
@@ -64,12 +67,12 @@ pinyin:
   dictionary: pinyin_simp
   explicit_rendering: true
   tips: "〔拼音〕"
-  initial_quality: 1                     # 将拼音的权重调低，让它不转去抢首位
+  initial_quality: 1                       # 将拼音的权重调低，让它不转去抢首位
   disable_user_dict_for_patterns:
     - "^[a-z]{1,2}$"
-  reverse_lookup: table_translator      # 指定拼音字后方的提示由五笔翻译器提供
+  reverse_lookup: table_translator         # 指定拼音字后方的提示由五笔翻译器提供
   comment_format:
-    - "xform/^/ /"                      # 提示码前加空格
+    - "xform/^/ /"                         # 提示码前加空格
 
 speller:
   delimiter: " ;'"
@@ -79,7 +82,7 @@ speller:
   auto_select_unique_candidate: false      # 无重码自动上屏
   alphabet: abcdefghijklmnopqrstuvwxyz     # 明确声明允许的按键（五笔通常不用 z，但拼音需要）
 
-# ctrl + ` 键反查逻辑
+# 按 ` 键拼音反查五笔
 reverse_lookup:
   dictionary: pinyin_simp
   prefix: "`"

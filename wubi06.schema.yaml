@@ -1,0 +1,101 @@
+# Rime schema: wubi06
+# encoding: utf-8
+
+schema:
+  schema_id: wubi06
+  name: "新世纪五笔"
+  version: “20221020”
+  author:
+    - sean gong
+  description: |
+    新世纪五笔字型，按 ` 拼音反查五笔
+  dependencies:
+    - pinyin_simp
+    - symbols
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator                  # 五笔翻译器
+    - reverse_lookup_translator         # 反查翻译器
+
+# 五笔主输入配置
+translator:
+  dictionary: wubi06
+  enable_charset_filter: false
+  enable_sentence: false
+  enable_user_dict: true
+  enable_encoder: false
+  encode_commit_history: false
+  max_phrase_length: 8
+  enable_completion: true
+  sentence_over_completion: false      # 补全提示
+  strict_spelling: false
+  disable_user_dict_for_patterns:
+    - "^[a-y]{1,3}$"
+  comment_format:
+    - "xform/^/ /"                     # 提示码前加空格
+
+speller:
+  delimiter: " ;'"
+  max_code_length: 4
+  auto_select: true
+  auto_select_unique_candidate: true
+  use_space: false
+  auto_clear: max_length
+
+# 按 ` 键拼音反查五笔
+reverse_lookup:
+  dictionary: pinyin_simp
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音反查〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+  comment_format:
+    - "xform/^/ /"
+
+punctuator:
+  import_preset: symbols
+
+# 快捷键魔改
+key_binder:
+  import_preset: default
+  bindings:
+    - {accept: semicolon, send: 2, when: has_menu}
+    - {accept: apostrophe, send: 3, when: has_menu}
+    - {accept: space, send: Escape, when: composing}
+    - {accept: space, send: space, when: has_menu}
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: "/[a-z]*$"
+    reverse_lookup: "^`[a-z]*'?$"
+
+show_notifications_via_notification_center: false
+us_keyboard_layout: true
