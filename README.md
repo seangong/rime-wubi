@@ -6,7 +6,7 @@
 默认支持输入法：
 - 86版五笔 + 拼音 混输
 - 新世纪五笔 + 拼音 混输
-- 新世纪五笔
+- 新世纪五笔，纯五笔
 - 袖珍简化字拼音
 
 macOS 版鼠须管（可直接移植到 windows 等其它系统）：
@@ -42,9 +42,9 @@ macOS 版鼠须管（可直接移植到 windows 等其它系统）：
 
 patch:
   schema_list:
-    - schema: wubi06          # 新世纪五笔，支持拼音反查五笔
-    - schema: wubi06_pinyin   # 新世纪五笔+拼音，支持拼音反查五笔
-    - schema: wubi86_pinyin   # 新世纪五笔+拼音，支持拼音反查五笔
+    - schema: wubi06          # 新世纪五笔，纯五笔。支持拼音反查五笔
+    - schema: wubi06_pinyin   # 新世纪五笔+拼音混输，支持拼音反查五笔
+    - schema: wubi86_pinyin   # 86版五笔+拼音混输，支持拼音反查五笔
     - schema: pinyin_simp
 ```
 
