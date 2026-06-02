@@ -22,7 +22,7 @@ macOS 版鼠须管（可直接移植到 windows 等其它系统）：
 
 - 使用 Ctrl + `（即 1 左侧那个键） 触发不同输入法切换选择菜单。
 
-![Xnip2026-05-29_17-10-11.jpg](https://github.com/seangong/Rime-wubi06/blob/master/doc/Xnip2026-05-29_17-10-11.jpg)
+![Xnip2026-06-02_08-37-58.jpg](https://github.com/seangong/rime-wubi/blob/master/doc/Xnip2026-06-02_08-37-58.jpg)
 
 
 # 鼠须管词库挂载配置
